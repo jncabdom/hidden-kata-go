@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"strconv"
 	"strings"
 )
 
@@ -11,9 +11,8 @@ func Add(numbers string) int {
 	numberArray := strings.Split(numbers, ",")
 
 	for _, value := range numberArray {
-		fmt.Printf("%s", value)
-		fmt.Printf("--------------")
-		//result += fmt.Sscan(value)
+		convertedValue, _ := strconv.Atoi(value)
+		result += convertedValue
 	}
 
 	return result
