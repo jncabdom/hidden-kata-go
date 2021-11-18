@@ -1,3 +1,3 @@
-module github.com/jncabdom/hidden-kata-go
+module github.com/jncabdom/kata-go
 
 go 1.17
