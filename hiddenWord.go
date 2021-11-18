@@ -17,11 +17,14 @@ var translation = map[rune]rune{
 	'9': 'm',
 }
 
-func HiddenWord(code uint32) string {
+func HiddenWord(code uint32) (string, error) {
+	if code < 100 {
+		return "", fmt.Errorf("Número menor que 100")
+	}
 	codeString := fmt.Sprint(code)
 	result := ""
 	for _, current := range codeString {
 		result += string(translation[current])
 	}
-	return result
+	return result, nil
 }
